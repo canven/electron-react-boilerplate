@@ -1,15 +1,25 @@
 import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
 import icon from '../../assets/icon.svg';
 import './App.css';
+import { text } from 'node:stream/consumers';
+import { useRef, useState } from 'react';
 
 function Hello() {
+  const dateVal = useRef<any>();
+
   return (
     <div>
-      <div className="Hello">
+      {/* <div className="Hello">
         <img width="200" alt="icon" src={icon} />
-      </div>
-      <h1>electron-react-boilerplate</h1>
-      <div className="Hello">
+      </div> */}
+      <h1>国际化转换系统</h1>
+      <input type="file"  ref={dateVal} />
+
+      <button type="button" onClick={() => {
+
+        console.log(dateVal.current.value)
+      } }>转换 </button>
+      {/* <div className="Hello">
         <a
           href="https://electron-react-boilerplate.js.org/"
           target="_blank"
@@ -34,7 +44,7 @@ function Hello() {
             Donate
           </button>
         </a>
-      </div>
+      </div> */}
     </div>
   );
 }
